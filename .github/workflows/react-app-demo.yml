@@ -17,6 +17,5 @@ jobs:
         run: cd react-app && ls -l
 
       - name: Install Dependencies
-        run: npm ci
+        run: npm install
 
-      
