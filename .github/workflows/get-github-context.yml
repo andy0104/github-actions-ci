@@ -1,7 +1,7 @@
 name: Github Context Info
 on: workflow_dispatch
 jobs:
-  Context Info:
+  Info:
     runs-on: ubuntu-latest
     steps:
       - name: Get context info
