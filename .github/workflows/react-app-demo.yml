@@ -22,3 +22,25 @@ jobs:
       - name: Run Test
         run: cd react-app && npm run test
 
+  deploy-app:
+    runs-on: ubuntu-latest
+    needs: test-app
+    steps:
+      - name: Get Code
+        uses: actions/checkout@v3
+
+      - name: Check Node JS Version
+        run: node --version
+
+      - name: Switch to React app
+        run: cd react-app && ls -l
+
+      - name: Install Dependencies
+        run: cd react-app && npm ci
+
+      - name: Build App
+        run: cd react-app && npm run build
+
+      - name: Deploy
+        run: echo "Deploying app..."
+
