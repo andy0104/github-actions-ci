@@ -1,8 +1,5 @@
 name: Github Context Info
-on:
-  workflow_dispatch:
-    branches:
-      - 'info-github-context'
+on: workflow_dispatch
 jobs:
   Context Info:
     runs-on: ubuntu-latest
