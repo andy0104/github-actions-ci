@@ -3,6 +3,9 @@ on:
   push:
     branches:
       - 'rect-app-demo'
+  workflow_dispatch:
+    branches:
+      - 'rect-app-demo'
 jobs:
   test-app:
     runs-on: ubuntu-latest
