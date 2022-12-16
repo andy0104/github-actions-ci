@@ -1,0 +1,11 @@
+name: Github Context Info
+on:
+  workflow_dispatch:
+    branches:
+      - 'info-github-context'
+jobs:
+  Context Info:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get context info
+        run: echo "${{ toJSON(github) }}"
