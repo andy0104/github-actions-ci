@@ -35,5 +35,9 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
+      - name: Download Artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: build-files # Same name as the artifact in the build job stage
       - name: Deploy
         run: echo "Deploying..."
