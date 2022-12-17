@@ -25,6 +25,12 @@ jobs:
         run: cd artifacts-1 && npm ci
       - name: Build website
         run: cd artifacts-1 && npm run build
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: build-files # Name of the artifacts would be saved as
+          path: | ## Use pipe for multi line file paths
+            artifacts-1/dist
   deploy:
     needs: build
     runs-on: ubuntu-latest
