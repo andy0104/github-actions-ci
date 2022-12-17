@@ -10,12 +10,12 @@ const HELP_ITEMS = [
   {
     id: 'h2',
     title: 'What is GitHub?',
-    text: 'GitHub is a company and online offering, providing you with tons of Git-related services (e.g., cloud repositories).',
+    text: 'GitHub is a company and online offering, providing you with tons of Git-related services (e.g. cloud repositories).',
   },
   {
     id: 'h3',
     title: 'What is GitHub Actions?',
-    text: 'GitHub Actions is an automation service (or CI / CD service) that helps you automate repository-related workflows and processes.',
+    text: 'GitHub Actions is an automation service (or CI/CD service) that helps you automate repository-related workflows and processes.',
   },
 ];
 
