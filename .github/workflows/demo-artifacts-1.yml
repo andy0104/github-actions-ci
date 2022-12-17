@@ -13,13 +13,13 @@ jobs:
         uses: actions/cache@v3
         with:
           path: ~/.npm
-          key: deps-node-modules-${{ hashFiles('**/package-lock.json') }}
+          key: deps-node-modules-${{ hashFiles('artifacts-1/package-lock.json') }}
       - name: Install dependencies
-        run: npm ci
+        run: cd artifacts-1 && npm ci
       - name: Lint code
-        run: npm run lint
+        run: cd artifacts-1 && npm run lint
       - name: Test code
-        run: npm run test
+        run: cd artifacts-1 && npm run test
   build:
     needs: test
     runs-on: ubuntu-latest
@@ -32,11 +32,11 @@ jobs:
         uses: actions/cache@v3
         with:
           path: ~/.npm
-          key: deps-node-modules-${{ hashFiles('**/package-lock.json') }}
+          key: deps-node-modules-${{ hashFiles('artifacts-1/package-lock.json') }}
       - name: Install dependencies
-        run: npm ci
+        run: cd artifacts-1 && npm ci
       - name: Build website
-        run: npm run build
+        run: cd artifacts-1 && npm run build
       - name: Publish JS filename
         id: publish
         run: find dist/assets/*.js -type f -execdir echo 'script-file={}' >> $GITHUB_OUTPUT ';'
@@ -44,7 +44,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: dist-files
-          path: dist
+          path: artifacts-1/dist
           # path: |
           #   dist
           #   package.json
